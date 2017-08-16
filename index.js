@@ -1,5 +1,6 @@
 var FEEDSUB = require('feedsub');
 var IRC = require('irc');
+var moment = require('moment');
 
 
 // Set up your little spambot
@@ -30,5 +31,7 @@ var reader = new FEEDSUB(feed, {
 
 reader.on('item', function (item) {
   console.log(item.title);
-  client.say(channel, item.title + ' ' + item.link.href);
+  if (moment(item.updated || item.published) > moment().subtract(interval, 'minutes')) {
+    client.say(channel, item.title + ' ' + item.link.href);
+  }
 });

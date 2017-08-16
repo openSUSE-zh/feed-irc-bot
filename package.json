@@ -1,12 +1,18 @@
 {
   "name": "opensuse-cn-feed-irc-bot",
   "description": "IRC bot for openSUSE China forum and wiki feeds",
-  "keywords": ["irc", "rss", "atom", "bot"],
+  "keywords": [
+    "irc",
+    "rss",
+    "atom",
+    "bot"
+  ],
   "version": "0.1.0",
   "author": "Guo Yunhe",
   "dependencies": {
     "feedsub": "0.4.0",
-    "irc": "0.5.2"
+    "irc": "0.5.2",
+    "moment": "^2.18.1"
   },
   "main": "index.js",
   "scripts": {
