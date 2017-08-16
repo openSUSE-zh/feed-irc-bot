@@ -7,7 +7,7 @@
 ## 安装与运行
 
 ```
-sudo zypper install git nodejs6
+sudo zypper install git nodejs6 make gcc-c++ libicu-devel
 
 git clone https://github.com/openSUSE-zh/feed-irc-bot.git
 
