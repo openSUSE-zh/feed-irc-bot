@@ -4,23 +4,18 @@
 
 > 不论天荒与地老，我们 IRC 上见。
 
-## 安装软件包
+## 安装与运行
 
 ```
-sudo zypper install cabal-install ghc
+sudo zypper install git nodejs6
 
-cabal update
+git clone https://github.com/openSUSE-zh/feed-irc-bot.git
 
-cabal install rss2irc
-```
+cd feed-irc-bot
 
-## 启动机器人
+npm install
 
-`cabal` 安装的软件包都在 `~/.cabal` 里面。
-
-```
-~/.cabal/bin/rss2irc https://forum.suse.org.cn/feed.php suse_cn_forum@chat.freenode.net:6667/#opensuse-cn &
-~/.cabal/bin/rss2irc https://zh.opensuse.org/api.php?hidebots=1&days=7&limit=50&action=feedrecentchanges&feedformat=atom suse_cn_wiki@chat.freenode.net:6667/#opensuse-cn &
+npm start
 ```
 
 ## 联系管理员
