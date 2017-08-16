@@ -30,8 +30,8 @@ var reader = new FEEDSUB(feed, {
 });
 
 reader.on('item', function (item) {
-  console.log(item.title);
   if (moment(item.updated || item.published) > moment().subtract(interval, 'minutes')) {
+    console.log(item.title);
     client.say(channel, item.title + ' ' + item.link.href);
   }
 });
