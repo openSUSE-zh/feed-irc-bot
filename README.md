@@ -7,7 +7,7 @@
 ## 安装软件包
 
 ```
-sudo zypper install cawbal-install ghc
+sudo zypper install cabal-install ghc
 
 cabal update
 
