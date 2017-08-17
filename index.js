@@ -13,20 +13,18 @@ var interval = 1 // how often to poll the feed, in minutes?
 
 console.log('start irc client');
 
-var client = new IRC.Client(server, bot,
-  {
-    channels: [channel],
-    realName: 'nodejs IRC bot',
-    autoRejoin: true,
-    autoConnect: true,
-  });
+var client = new IRC.Client(server, bot, {
+  channels: [channel],
+  realName: 'nodejs IRC bot',
+  autoRejoin: true,
+  autoConnect: true,
+});
 
 console.log('start feed client');
 
 var reader = new FEEDSUB(feed, {
   interval: interval,
   autoStart: true,
-
 });
 
 reader.on('item', function (item) {
