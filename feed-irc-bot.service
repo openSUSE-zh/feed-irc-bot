@@ -4,6 +4,11 @@ Description=openSUSE Feed IRC Bot
 [Service]
 Type=forking
 ExecStart=/usr/bin/node /path/to/feed-irc-bot/index.js
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=feed-irc-bot
 
 [Install]
 WantedBy=multi-user.target
