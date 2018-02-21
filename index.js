@@ -28,5 +28,5 @@ var reader = new FEEDSUB(feed, {
 
 reader.on('item', function (item) {
   console.log(item.title);
-  client.say(channel, item.title + ' ' + item.link.href);
+  client.say(channel, item.title + ' (' + item['dc:creator'] + ') ' + item.link);
 });
