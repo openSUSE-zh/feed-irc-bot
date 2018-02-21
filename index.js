@@ -5,7 +5,7 @@ var IRC = require('irc');
 var server = 'chat.freenode.net';
 var bot = 'suse_cn_forum';
 var channel = '#opensuse-cn';
-var feed = 'https://forum.suse.org.cn/feed.php';
+var feed = 'https://forum.suse.org.cn/latest.rss';
 var interval = 1 // how often to poll the feed, in minutes?
 
 
