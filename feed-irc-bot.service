@@ -1,13 +1,11 @@
 [Unit]
-Description=openSUSE Feed IRC Bot
+Description=Feed IRC Bot
+After=network.target
 
 [Service]
+Type=simple
 ExecStart=/usr/bin/node /path/to/feed-irc-bot/index.js
-Restart=always
-RestartSec=10
-StandardOutput=syslog
-StandardError=syslog
-SyslogIdentifier=feed-irc-bot
+Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
