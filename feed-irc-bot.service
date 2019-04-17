@@ -6,6 +6,7 @@ After=network.target
 Type=simple
 ExecStart=/usr/bin/node /path/to/feed-irc-bot/index.js
 Restart=on-failure
+RestartSec=10
 
 [Install]
 WantedBy=multi-user.target
