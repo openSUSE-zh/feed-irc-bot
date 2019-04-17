@@ -10,13 +10,13 @@ const client = new IRC.Client(config.irc.server, config.irc.nickname, {
 });
 
 // Debug output
-client.addListener('message', function (from, to, message) {
-    console.log(from + ' => ' + to + ': ' + message);
-});
-client.addListener('error', function(message) {
-    console.log('error: ', message);
-});
-    
+// client.addListener('message', function (from, to, message) {
+//     console.log(from + ' => ' + to + ': ' + message);
+// });
+// client.addListener('error', function(message) {
+//     console.log('error: ', message);
+// });
+
 function send(message) {
     client.say(config.irc.channel, message);
 }
