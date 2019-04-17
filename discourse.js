@@ -1,6 +1,14 @@
 const fetch = require('node-fetch');
 
 module.exports = function (send, name, url, interval) {
+    // Makesure interval is defined and not shorter than a second
+    if (!interval) {
+        interval = 1;
+    }
+    if (interval < 1) {
+        interval = 1;
+    }
+
     let timestamp;
     setInterval(function () {
         console.log("fetch discourse site " + name);
