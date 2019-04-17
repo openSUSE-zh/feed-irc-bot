@@ -3,6 +3,7 @@ const fetch = require('node-fetch');
 module.exports = function (send, name, url, interval) {
     let timestamp;
     setInterval(function () {
+        console.log("fetch discourse site " + name);
         fetch(url + 'posts.json')
             .then(function(response) {
                 return response.json();
