@@ -16,7 +16,7 @@ module.exports = function (send, name, url, interval, postNumber) {
             .then(function(data) {
                 if (timestamp) {
                     data.latest_posts.filter(function (post) {
-                        return post.created_at > timestamp && (!postNumber || post.post_number < postNumber);
+                        return post.created_at > timestamp && (!postNumber || post.post_number <= postNumber);
                     })
                     .reverse()
                     .map(function (post) {
