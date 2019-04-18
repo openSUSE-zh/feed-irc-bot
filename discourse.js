@@ -1,11 +1,8 @@
 const fetch = require('node-fetch');
 
-module.exports = function (send, name, url, interval) {
-    // Makesure interval is defined and not shorter than a second
-    if (!interval) {
-        interval = 1;
-    }
-    if (interval < 1) {
+module.exports = function (send, name, url, interval, postNumber) {
+    // Make sure interval is defined and not shorter than a second
+    if (!interval || interval < 1) {
         interval = 1;
     }
 
@@ -19,7 +16,7 @@ module.exports = function (send, name, url, interval) {
             .then(function(data) {
                 if (timestamp) {
                     data.latest_posts.filter(function (post) {
-                        return post.created_at > timestamp;
+                        return post.created_at > timestamp && (!postNumber || post.post_number < postNumber);
                     })
                     .reverse()
                     .map(function (post) {

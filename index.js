@@ -24,7 +24,7 @@ function send(message) {
 config.feeds.map(function (feed) {
     switch (feed.type) {
         case 'discourse':
-            discourse(send, feed.name, feed.url, feed.interval);
+            discourse(send, feed.name, feed.url, feed.interval, feed.postNumber);
             break;
     }
 });
